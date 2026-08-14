@@ -1,5 +1,6 @@
 import { Link, Routes, Route} from 'react-router-dom'
-import Authentication from "./Authentication";
+import SignIn from "./Sign-In";
+import Login from "./Login";
 import './App.css'
 
 function App() {
@@ -7,17 +8,13 @@ function App() {
 
   return (
     <>
-      <nav className="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+      <nav className="relative bg-red-400 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px ">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">
-            </div>
-            <div className="hidden sm:ml-6 sm:block">
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end ">
+            <div className="hidden sm:ml-6 sm:block sm:mr-1">
               <div className="flex space-x-4">
-                <Link to="/Login" aria-current="page" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-950/50 hover:text-white">Login</Link>
-                <Link to="/Sign-up" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-950/50 hover:text-white">Sign Up</Link>
+                <Link to="/Login" aria-current="page" className="rounded-md px-3 py-2 text-lg font-medium text-white hover:bg-red-800">Login</Link>
+                <Link to="/Sign-up" className="rounded-md px-3 py-2 text-lg font-medium text-white hover:bg-red-800">Sign Up</Link>
               </div>
             </div>
           </div>
@@ -29,8 +26,8 @@ function App() {
     
     
     <Routes>
-      <Route path="/Login" element={<Authentication />} />
-      <Route path="/Sign-up" element={<Authentication />} />
+      <Route path="/Login" element={<Login />} />
+      <Route path="/Sign-up" element={<SignIn/>} />
     </Routes>
       </>
   )
